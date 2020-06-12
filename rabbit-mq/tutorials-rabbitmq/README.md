@@ -42,3 +42,5 @@ ref: https://www.rabbitmq.com/tutorials/tutorial-four-go.htmls
 #### Direct can't do routing basing on multiple criteria
 #### Attribute <i>routing key</i> must be a list of words, delimited by dots, when sent to a topic exchange. "*" can represent exactly one word. "#" can represent zero or more words. 
 #### 
+
+### 06: How to do a round trip message as a remote procedure call
