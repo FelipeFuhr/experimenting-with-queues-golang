@@ -1,0 +1,25 @@
+version: "2.1"
+services:
+  receiver:
+    build: ./receive
+    ports:
+      - "6060:8080"
+    depends_on:
+      - rabbitmq
+    restart: always
+  sender:
+    build: ./send
+    ports:
+      - "7070:8080"
+    depends_on:
+      - rabbitmq
+    restart: always
+  rabbitmq:
+    image: rabbitmq:3.8.4-management
+    hostname: "rabbitmq"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: "rabbitmq"
+      RABBITMQ_DEFAULT_PASS: "rabbitmq"
